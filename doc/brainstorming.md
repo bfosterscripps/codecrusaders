@@ -28,6 +28,6 @@
 - text formatting (e.g. underline links)
 - gradients (e.g. for the header)
 - dropdown
--Organized, easy to find crucial links.
+- Organized, easy to find crucial links.
 
 ##### Advanced
