@@ -7,5 +7,8 @@
 		<div class="page-header" >
 			<h1><small>Test</small></h1>
 		</div>
+		<div class="btn-group" role="group" aria-label="...">
+		  <button type="button" class="btn btn-default">Submit</button>
+		</div>
 	</body>
 </html>
