@@ -8,6 +8,9 @@
 		<div class="page-header" >
 			<h1><small>Test</small></h1>
 		</div>
+
+		
+
 		
 		<p>Select a Degree:</p>
 		<div class="btn-group">
@@ -49,6 +52,10 @@
 		
 		<div class="btn-group" role="group" aria-label="...">
 			<button type="button" class="btn btn-default">Submit</button>
+		</div>
+
+		<div class="btn-group" role="group" aria-label="...">
+		  <button type="button" class="btn btn-default">Submit</button>
 		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
