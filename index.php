@@ -7,6 +7,9 @@
 		<div class="page-header" >
 			<h1><small>Test</small></h1>
 		</div>
+
+		
+
 		
 		<div class="dropdown">
 		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -31,8 +34,13 @@
 		    <li><a href="#">Roane State Community College: Clinton</a></li>
 		  </ul>
 		</div>
+
+		<div class="btn-group" role="group" aria-label="...">
+		  <button type="button" class="btn btn-default">Submit</button>
+		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js"></script>
+
 	</body>
 </html>
