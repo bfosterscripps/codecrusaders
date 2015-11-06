@@ -2,6 +2,7 @@
 	<head>
 		<title>Wireframe: Test</title>
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+		<link rel="stylesheet" href="lib/css/dropdowns-enhancement.css">
 	</head>
 	<body>
 		<div class="page-header" >
@@ -11,28 +12,46 @@
 		
 
 		
-		<div class="dropdown">
-		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		    Select Degree
-		    <span class="caret"></span>
-		  </button>
-		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-		    <li><a href="#">Associate </a></li>
-		    <li><a href="#">Bachelor</a></li>
-		    <li><a href="#">Master</a></li>
-		    <li><a href="#">Doctor</a></li>
-		  </ul>
+		<p>Select a Degree:</p>
+		<div class="btn-group">
+			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">Associate<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li>
+						<input type="radio" id="asso_id" name="degree" value="1" checked="">
+						<label for="asso_id">Associate</label>
+					</li>
+					<li>
+						<input type="radio" id="bach_id" name="degree" value="2">
+				  		<label for="bach_id">Bachelor</label>
+				 	</li>
+					<li>
+						<input type="radio" id="mast_id" name="degree" value="2">
+				  		<label for="mast_id">Master</label>
+				 	</li>
+					<li>
+						<input type="radio" id="doct_id" name="degree" value="2">
+				  		<label for="doct_id">Doctor</label>
+				 	</li>
+				</ul>
 		</div>
 		
-		<div class="dropdown">
-		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		    Select College/University
-		    <span class="caret"></span>
-		  </button>
-		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-		    <li><a href="#">Pellissippi State Community College</a></li>
-		    <li><a href="#">Roane State Community College: Clinton</a></li>
-		  </ul>
+		<p>Select a College:</p>
+		<div class="btn-group">
+			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">Pellissippi State Community College<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li>
+						<input type="radio" id="pell_id" name="college" value="1" checked="">
+						<label for="pell_id">Pellissippi State Community College</label>
+					</li>
+					<li>
+						<input type="radio" id="roane_id" name="college" value="2">
+				  		<label for="roane_id">Roane State Community College: Clinton</label>
+				 	</li>
+				</ul>
+		</div>
+		
+		<div class="btn-group" role="group" aria-label="...">
+			<button type="button" class="btn btn-default">Submit</button>
 		</div>
 
 		<div class="btn-group" role="group" aria-label="...">
@@ -41,6 +60,6 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js"></script>
-
+		<script src="lib/js/dropdowns-enhancement.js"></script>
 	</body>
 </html>
