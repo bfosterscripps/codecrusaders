@@ -53,10 +53,7 @@
 		<div class="btn-group" role="group" aria-label="...">
 			<button type="button" class="btn btn-default">Submit</button>
 		</div>
-
-		<div class="btn-group" role="group" aria-label="...">
-		  <button type="button" class="btn btn-default">Submit</button>
-		</div>
+		
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js"></script>
