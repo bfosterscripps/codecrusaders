@@ -13,8 +13,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 $sql = 'SELECT * from college_degree_cost 
-WHERE college_id in (select id from college where name = $_GET["college"]) 
-AND degree_id in (select id from degree where type = $_GET["degree"]);';
+WHERE college_id in (select id from college where name = ' . $_GET["college"] . ' ) 
+AND degree_id in (select id from degree where type = ' . $_GET["degree"]);;
 
 $result = mysqli_query($conn, $sql);
 if (!$result) {
