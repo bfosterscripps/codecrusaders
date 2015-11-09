@@ -18,7 +18,7 @@ AND degree_id in (select id from degree where type = $_GET["degree"]);';
 
 $result = mysqli_query($conn, $sql);
 if (!$result) {
-    die(mysqli_error($link));
+    die(mysqli_error($result));
 }
 
 if (mysqli_num_rows($result) > 0) {
