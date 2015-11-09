@@ -19,7 +19,9 @@ AND degree_id in (select id from degree where type = $_GET["degree"]);';
 $result = mysqli_query($conn, $sql);
 if (!$result) {
     die(mysqli_error($link));
-}else{(mysqli_num_rows($result) > 0) {
+}
+
+if (mysqli_num_rows($result) > 0) {
     $results = 0;
     while($row = mysqli_fetch_assoc($result)) {
     	$row["cost"];
