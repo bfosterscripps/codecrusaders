@@ -61,11 +61,10 @@
 		<script>
 		$( ".submit" ).click(function() {
 
-			  var degree = document.getElementsByClassName("btn btn-default dropdown-toggle degree")[0];
-			  var college = document.getElementsByClassName("btn btn-default dropdown-toggle college")[0];
-  				alert("You've chosen the degree: " + degree.firstChild.textContent + "\n at: " + college.firstChild.textContent + ".");  
-
-		});
+			  var degree = document.getElementsByClassName("btn btn-default dropdown-toggle degree")[0].firstChild.textContent;
+			  var college = document.getElementsByClassName("btn btn-default dropdown-toggle college")[0].firstChild.textContent;
+  			window.location = 'Results.php?degree=' + degree + '&college=' + college;
+  		});
 		</script>
 	</body>
 </html>
