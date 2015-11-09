@@ -41,7 +41,7 @@
 				<ul class="dropdown-menu">
 					<li>
 						<input type="radio" id="pell_id" name="college" value="1" checked="">
-						<label for="pell_id">Pellissippi State Community College</label>
+						<label for="pell_id">Pellissippi</label>
 					</li>
 					<li>
 						<input type="radio" id="roane_id" name="college" value="2">
