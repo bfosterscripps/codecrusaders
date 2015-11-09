@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost:3306";
-$username = "38330ff9f647";
-$password = "ec882b9d859eddd1";
-$dbname = "codecrusaders";
+$servername = "localhost:8889";
+$username = "root";
+$password = "root";
+$dbname = "college";
 
 
 
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 } 
 $sql = 'SELECT * from college_degree_cost 
 WHERE college_id in (select id from college where name = ' . $_GET["college"] . ' ) 
-AND degree_id in (select id from degree where type = ' . $_GET["degree"]);;
+AND degree_id in (select id from degree where type = ' . $_GET["degree"];
 
 $result = mysqli_query($conn, $sql);
 if (!$result) {
