@@ -2,6 +2,7 @@
 	<head>
 		<title>Wireframe: Test</title>
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+		<link rel="stylesheet" href="lib/css/sticky-footer.css">
 	</head>
 	<body>
 		<div class="page-header" >
@@ -41,6 +42,11 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js"></script>
-
+<footer class="footer">
+<div class="container">
+	<p class="text-muted">CodeTN project by Ryan Lemons, Tanner McKammey, Nick Bentley, and Griff Hagen.</p>
+		</div>
+		</footer>
+	 
 	</body>
 </html>
