@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="page-header" >
-			<h1><small>Test.</small></h1>
+			<h1><small>Test</small></h1>
 		</div>
 
 		
