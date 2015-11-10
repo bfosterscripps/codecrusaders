@@ -72,8 +72,10 @@
 		<div class="btn-group" role="group" aria-label="...">
 			<button type="button" class="btn btn-default submit">Submit</button>
 		</div>
-		
-		
+		<!--  	window.location = 'Results.php?degree=' + degree + '&college=' + college;	-->
+		<div id = "Results">
+			
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js"></script>
 		<script src="lib/js/dropdowns-enhancement.js"></script>
@@ -82,8 +84,13 @@
 
 			  var degree = document.getElementsByClassName("btn btn-default dropdown-toggle degree")[0].firstChild.textContent;
 			  var college = document.getElementsByClassName("btn btn-default dropdown-toggle college")[0].firstChild.textContent;
-  			window.location = 'Results.php?degree=' + degree + '&college=' + college;
-  		});
+			        var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET", 'Results.php?degree=' + degree + '&college=' + college, false);
+				xmlhttp.send();
+				document.getElementById("Results").innerHTML = xmlhttp.responseText;
+		  		});
+	</script>
+		
 		</script>
 	</body>
 </html>
