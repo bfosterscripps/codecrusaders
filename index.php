@@ -4,6 +4,7 @@
 		<title>Project name</title>
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
 		<link href="lib/css/navbar-fixed-top.css" rel="stylesheet">
+		<link href="lib/css/sticky-footer-navbar.css" rel="stylesheet">
 		<meta name="author" content="Tanner McKamey, Ryan Lemons, Griff Hagen, Nicholas Bentley">
 	</head>
 	
@@ -69,6 +70,12 @@
 		      </div>
 
 		    </div> <!-- /container -->
+		
+			<footer class="footer">
+			      <div class="container">
+			        <p class="text-muted">Place sticky footer content here.</p>
+			      </div>
+			    </footer>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js"></script>
