@@ -15,22 +15,36 @@
 		<div class="btn-group">
 			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle degree">Associates<span class="caret"></span></button>
 				<ul class="dropdown-menu">
-					<li>
-						<input type="radio" id="asso_id" name="degree" value="1" checked="">
-						<label for="asso_id">Associates</label>
-					</li>
-					<li>
-						<input type="radio" id="bach_id" name="degree" value="2">
-				  		<label for="bach_id">Bachelors</label>
-				 	</li>
-					<li>
-						<input type="radio" id="mast_id" name="degree" value="3">
-				  		<label for="mast_id">Masters</label>
-				 	</li>
-					<li>
-						<input type="radio" id="doct_id" name="degree" value="4">
-				  		<label for="doct_id">Doctoral</label>
-				 	</li>
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle college" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Dropdown
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<?php
+				$servername = "localhost:3306";
+				$username = "38330ff9f647";
+				$password = "ec882b9d859eddd1";
+				$dbname = "codecrusaders";
+				$conn = new mysqli($servername, $username, $password,$dbname);
+
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				} 
+				$sql = 'SELECT * from degree;';
+				
+				$result = mysqli_query($conn, $sql);
+
+				if (mysqli_num_rows($result) > 0) {
+					$results = 0;
+					while($row = mysqli_fetch_assoc($result)) {
+						echo('<li><a href = "#">' . $row["name"] . '</li>');
+					}
+				}
+				
+				?>
+				</ul>
+		</div>
 				</ul>
 		</div>
 		
