@@ -35,9 +35,12 @@
 		</div>
 		
 		<p>Select a College:</p>
-		<div class="btn-group">
-			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle college">Pellissippi<span class="caret"></span></button>
-				<ul class="dropdown-menu">
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle college" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Dropdown
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 				<?php
 				$servername = "localhost:3306";
 				$username = "38330ff9f647";
@@ -55,15 +58,11 @@
 				if (mysqli_num_rows($result) > 0) {
 					$results = 0;
 					while($row = mysqli_fetch_assoc($result)) {
-						echo('<li>
-						<input type="radio" id = "' . $row["name"] . $row["id"] .'" name="college" value="' . $row["id"] . '" checked="">
-						<label for="' . $row["name"] . $row["id"] . '" >' . $row["name"] . '</label>
-						</li>');
+						echo('<li><a href = "#">' . $row("name") . '</li>');
 					}
 				}
 				
 				?>
-				
 				</ul>
 		</div>
 		
