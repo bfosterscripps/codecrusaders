@@ -58,7 +58,7 @@
 				if (mysqli_num_rows($result) > 0) {
 					$results = 0;
 					while($row = mysqli_fetch_assoc($result)) {
-						echo('<li><a href = "#">' . $row("name") . '</li>');
+						echo('<li><a href = "#">' . $row["name"] . '</li>');
 					}
 				}
 				
