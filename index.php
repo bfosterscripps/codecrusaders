@@ -1,17 +1,16 @@
 <!DOCTYPE html>
+
 	<head>
-		<title>Wireframe: Test</title>
+		<title>Project name</title>
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
-		<link rel="stylesheet" href="lib/css/dropdowns-enhancement.css">
+		<link href="lib/css/navbar-fixed-top.css" rel="stylesheet">
+		<link href="lib/css/sticky-footer-navbar.css" rel="stylesheet">
+		<meta name="author" content="Tanner McKamey, Ryan Lemons, Griff Hagen, Nicholas Bentley">
 	</head>
+	
 	<body>
-		<div class="page-header" >
-			<h1><small>Test</small></h1>
-		</div>
 
-		
 
-		
 		<p>Select a Degree:</p>
 		<div class="btn-group">
 			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle degree">Associates<span class="caret"></span></button>
@@ -40,11 +39,10 @@
 			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle college">Pellissippi<span class="caret"></span></button>
 				<ul class="dropdown-menu">
 				<?php
-				$servername = "localhost:8889";
-				$username = "root";
-				$password = "root";
-				$dbname = "college";
-
+				$servername = "localhost:3306";
+				$username = "38330ff9f647";
+				$password = "ec882b9d859eddd1";
+				$dbname = "codecrusaders"
 				$conn = new mysqli($servername, $username, $password,$dbname);
 
 				if ($conn->connect_error) {
@@ -72,7 +70,6 @@
 		<div class="btn-group" role="group" aria-label="...">
 			<button type="button" class="btn btn-default submit">Submit</button>
 		</div>
-		<!--  	window.location = 'Results.php?degree=' + degree + '&college=' + college;	-->
 		<div id = "Results">
 			
 		</div>
@@ -89,8 +86,8 @@
 				xmlhttp.send();
 				document.getElementById("Results").innerHTML = xmlhttp.responseText;
 		  		});
-	</script>
-		
 		</script>
+		
 	</body>
+	
 </html>
