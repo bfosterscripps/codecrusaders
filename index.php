@@ -13,33 +13,15 @@
 
 		<p>Select a Degree:</p>
 			<div class="dropdown">
-			  <button class="btn btn-default dropdown-toggle college" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			  <button class="btn btn-default dropdown-toggle degree" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 			    Dropdown
 			    <span class="caret"></span>
 			  </button>
-			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				<?php
-				$servername = "localhost:3306";
-				$username = "38330ff9f647";
-				$password = "ec882b9d859eddd1";
-				$dbname = "codecrusaders";
-				$conn = new mysqli($servername, $username, $password,$dbname);
-
-				if ($conn->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
-				} 
-				$sql = 'SELECT * from degree;';
-				
-				$result = mysqli_query($conn, $sql);
-
-				if (mysqli_num_rows($result) > 0) {
-					$results = 0;
-					while($row = mysqli_fetch_assoc($result)) {
-						echo('<li><a href = "#">' . $row["name"] . '</li>');
-					}
-				}
-				
-				?>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+					<li>Associates</li>
+					<li>Bachelors</li>
+					<li>Masters</li>
+					<li>Doctoral</li>
 				</ul>
 		</div>
 		
