@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 
 	<head>
-		<title>Project name</title>
+		<title>Degree Calculator</title>
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
 		<link href="lib/css/navbar-fixed-top.css" rel="stylesheet">
 		<link href="lib/css/sticky-footer-navbar.css" rel="stylesheet">
+		<link href="lib/css/styles.css" rel="stylesheet">
+
 		<meta name="author" content="Tanner McKamey, Ryan Lemons, Griff Hagen, Nicholas Bentley">
 	</head>
 	
@@ -20,7 +22,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="#">Project name</a>
+		          <a class="navbar-brand" href="#">Degree Calculator</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
@@ -36,8 +38,8 @@
 
 		      <!-- Main component for a primary marketing message or call to action -->
 		      <div class="jumbotron">
-		        <h1>Title here</h1>
-		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus euismod sollicitudin. Pellentesque eu eleifend tortor, eu aliquam eros. Praesent luctus, lectus sed sagittis vehicula, est velit elementum diam, et tempor odio lacus viverra odio.</p>
+		        <h1>Degree Calculator</h1>
+		        <p>Welcome to our website. Please pick which college you'd like to attend, and what degree you plan to receive below.</p>
 				
 				<div class="dropdown">
 				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -73,7 +75,7 @@
 		
 			<footer class="footer">
 			      <div class="container">
-			        <p class="text-muted">Place sticky footer content here.</p>
+			        <p class="text-muted">© Code Crusaders 2015</p>
 			      </div>
 			    </footer>
 		
