@@ -39,7 +39,7 @@
 		      <!-- Main component for a primary marketing message or call to action -->
 		      <div class="jumbotron">
 		        <h1>Degree Calculator</h1>
-		        <p>Welcome to our website. Please pick which college you'd like to attend, and what agree you plan to receive below.</p>
+		        <p>Welcome to our website. Please pick which college you'd like to attend, and what degree you plan to receive below.</p>
 				
 				<div class="dropdown">
 				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -75,7 +75,7 @@
 		
 			<footer class="footer">
 			      <div class="container">
-			        <p class="text-muted">Place sticky footer content here.</p>
+			        <p class="text-muted">© Code Crusaders 2015</p>
 			      </div>
 			    </footer>
 		
