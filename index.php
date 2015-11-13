@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-
-	<head>
+<html><head>
 		<title>Degree Calculator</title>
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
 		<link href="lib/css/navbar-fixed-top.css" rel="stylesheet">
@@ -42,12 +40,12 @@
 		        <p>Welcome to our website. Please pick which college you'd like to attend, and what degree you plan to receive below.</p>
 				
 				<div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				  <button class="degree btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 				    Select Degree
 				    <span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				    <li><a href="#">Associate </a></li>
+				    <li><a href="#">Associate</a></li>
 				    <li><a href="#">Bachelor</a></li>
 				    <li><a href="#">Master</a></li>
 				    <li><a href="#">Doctor</a></li>
@@ -55,19 +53,40 @@
 				</div>
 				
 				<div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				  <button class="college btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    Select College/University
 				    <span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-				    <li><a href="#">Pellissippi State Community College</a></li>
-				    <li><a href="#">Roane State Community College: Clinton</a></li>
+				<?php
+				$servername = "localhost:3306";
+				$username = "38330ff9f647";
+				$password = "ec882b9d859eddd1";
+				$dbname = "codecrusaders";
+				$conn = new mysqli($servername, $username, $password,$dbname);
+
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				} 
+				$sql = 'SELECT * from college;';
+				
+				$result = mysqli_query($conn, $sql);
+
+				if (mysqli_num_rows($result) > 0) {
+					$results = 0;
+					while($row = mysqli_fetch_assoc($result)) {
+						echo('<li><a href = "#">' . $row["name"] . '</li>');
+					}
+				}
+				
+				?>
 				  </ul>
 				</div>
 
 				<div class="btn-group" role="group" aria-label="...">
 				  <button type="button" class="btn btn-default">Submit</button>
 				</div>
+				<div id = "Results"></div>
 				
 		      </div>
 
@@ -81,7 +100,33 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js"></script>
+		<script src="lib/js/dropdowns-enhancement.js"></script>
+		<script>
+		var SelectedCollege = null;
+		var SelectedDegree = null;
+		$('.dropdown-menu li a').click(function(){
+			    var Clicked = $(this).text();
+			    if(!(Clicked == "Associate" || Clicked == "Bachelor" || Clicked == "Master" || Clicked == "Doctor")){
+			    $(".college.btn:first-child").html($(this).text() + ' <span class="caret"></span>');
+			    SelectedCollege = Clicked;
+			}else{
+			    $(".degree.btn:first-child").html($(this).text() + ' <span class="caret"></span>');
+				SelectedDegree = Clicked;
+			}
+		});
 
-	</body>
+		$( ".submit" ).click(function() {
+
+			  var degree = document.getElementsByClassName("btn btn-default dropdown-toggle degree")[0].firstChild.textContent;
+			  var college = document.getElementsByClassName("btn btn-default dropdown-toggle college")[0].firstChild.textContent;
+			        var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET", 'Results.php?degree=' + degree + '&college=' + college, false);
+				xmlhttp.send();
+				document.getElementById("Results").innerHTML = xmlhttp.responseText;
+		  		});
+		</script>
+
 	
-</html>
+	
+
+</body></html>
