@@ -18,10 +18,10 @@
 			    <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-					<li>Associates</li>
-					<li>Bachelors</li>
-					<li>Masters</li>
-					<li>Doctoral</li>
+					<li><a href = "#">Associates</a></li>
+					<li><a href = "#">Bachelors</a></li>
+					<li><a href = "#">Masters</a></li>
+					<li><a href = "#">Doctoral</a></li>
 				</ul>
 		</div>
 		
