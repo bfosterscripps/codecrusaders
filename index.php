@@ -1,37 +1,63 @@
-<!DOCTYPE html>
-
-	<head>
-		<title>Project name</title>
+<html><head>
+		<title>Degree Calculator</title>
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
 		<link href="lib/css/navbar-fixed-top.css" rel="stylesheet">
 		<link href="lib/css/sticky-footer-navbar.css" rel="stylesheet">
+		<link href="lib/css/styles.css" rel="stylesheet">
+
 		<meta name="author" content="Tanner McKamey, Ryan Lemons, Griff Hagen, Nicholas Bentley">
 	</head>
 	
 	<body>
 
+		    <!-- Fixed navbar -->
+		    <nav class="navbar navbar-default navbar-fixed-top">
+		      <div class="container">
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          <a class="navbar-brand" href="#">Degree Calculator</a>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		          <ul class="nav navbar-nav">
+		            <li class="active"><a href="#">Home</a></li>
+		            <li><a href="#about">About</a></li>
+		            <li><a href="#contact">Contact</a></li>
+		          </ul>
+		        </div><!--/.nav-collapse -->
+		      </div>
+		    </nav>
 
-		<p>Select a Degree:</p>
-			<div class="dropdown">
-			  <button class="btn btn-default dropdown-toggle degree" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-			    Dropdown
-			    <span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-					<li><a href = "#">Associates</a></li>
-					<li><a href = "#">Bachelors</a></li>
-					<li><a href = "#">Masters</a></li>
-					<li><a href = "#">Doctoral</a></li>
-				</ul>
-		</div>
-		
-		<p>Select a College:</p>
-			<div class="dropdown">
-			  <button class="btn btn-default dropdown-toggle college" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-			    Dropdown
-			    <span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		    <div class="container">
+
+		      <!-- Main component for a primary marketing message or call to action -->
+		      <div class="jumbotron">
+		        <h1>Degree Calculator</h1>
+		        <p>Welcome to our website. Please pick which college you'd like to attend, and what degree you plan to receive below.</p>
+				
+				<div class="dropdown">
+				  <button class="degree btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Select Degree
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				    <li><a href="#">Associate</a></li>
+				    <li><a href="#">Bachelor</a></li>
+				    <li><a href="#">Master</a></li>
+				    <li><a href="#">Doctor</a></li>
+				  </ul>
+				</div>
+				
+				<div class="dropdown">
+				  <button class="college btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Select College/University
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 				<?php
 				$servername = "localhost:3306";
 				$username = "38330ff9f647";
@@ -54,19 +80,41 @@
 				}
 				
 				?>
-				</ul>
-		</div>
+				  </ul>
+				</div>
+
+				<div class="btn-group" role="group" aria-label="...">
+				  <button type="button" class="btn btn-default">Submit</button>
+				</div>
+				<div id = "Results"></div>
+				
+		      </div>
+
+		    </div> <!-- /container -->
 		
-		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-default submit">Submit</button>
-		</div>
-		<div id = "Results">
-			
-		</div>
+			<footer class="footer">
+			      <div class="container">
+			        <p class="text-muted">© Code Crusaders 2015</p>
+			      </div>
+			    </footer>
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="lib/js/bootstrap.min.js"></script>
 		<script src="lib/js/dropdowns-enhancement.js"></script>
 		<script>
+		var SelectedCollege = null;
+		var SelectedDegree = null;
+		$('.dropdown-menu li a').click(function(){
+			    var Clicked = $(this).text();
+			    if(!(Clicked == "Associate" || Clicked == "Bachelor" || Clicked == "Master" || Clicked == "Doctor")){
+			    $(".college.btn:first-child").html($(this).text() + ' <span class="caret"></span>');
+			    SelectedCollege = Clicked;
+			}else{
+			    $(".degree.btn:first-child").html($(this).text() + ' <span class="caret"></span>');
+				SelectedDegree = Clicked;
+			}
+		});
+
 		$( ".submit" ).click(function() {
 
 			  var degree = document.getElementsByClassName("btn btn-default dropdown-toggle degree")[0].firstChild.textContent;
@@ -77,7 +125,8 @@
 				document.getElementById("Results").innerHTML = xmlhttp.responseText;
 		  		});
 		</script>
-		
-	</body>
+
 	
-</html>
+	
+
+</body></html>
