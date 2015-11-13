@@ -130,7 +130,7 @@
 			  		SelectedDegree = "Doctoral";
 			  	}
 			        var xmlhttp = new XMLHttpRequest();
-				xmlhttp.open("GET", 'Results.php?degree=' + degree + '&college=' + college, false);
+				xmlhttp.open("GET", 'Results.php?degree=' + SelectedDegree + '&college=' + SelectedCollege, false);
 				xmlhttp.send();
 				document.getElementById("Results").innerHTML = xmlhttp.responseText;
 			}else{
