@@ -83,10 +83,10 @@
 				  </ul>
 				</div>
 
-				<div class="btn-group" role="group" aria-label="...">
+				<div class="btn-group submit" role="group" aria-label="...">
 				  <button type="button" class="btn btn-default">Submit</button>
 				</div>
-				<div id = "Results"></div>
+				<div id = "Results" style = "padding-top: 15px; padding-bottom: 5px;"></div>
 				
 		      </div>
 
@@ -116,13 +116,35 @@
 		});
 
 		$( ".submit" ).click(function() {
-
-			  var degree = document.getElementsByClassName("btn btn-default dropdown-toggle degree")[0].firstChild.textContent;
-			  var college = document.getElementsByClassName("btn btn-default dropdown-toggle college")[0].firstChild.textContent;
+			  if (SelectedCollege != null && SelectedDegree != null){
+			  	if(SelectedDegree == "Associate"){
+			  		SelectedDegree = "Associates";
+			  	}
+			  	if(SelectedDegree == "Bachelor"){
+			  		SelectedDegree = "Bachelors";
+			  	}
+			  	if(SelectedDegree == "Master"){
+			  		SelectedDegree = "Masters";
+			  	}
+			  	if(SelectedDegree == "Doctor"){
+			  		SelectedDegree = "Doctoral";
+			  	}
 			        var xmlhttp = new XMLHttpRequest();
 				xmlhttp.open("GET", 'Results.php?degree=' + degree + '&college=' + college, false);
 				xmlhttp.send();
 				document.getElementById("Results").innerHTML = xmlhttp.responseText;
+			}else{
+				if (SelectedCollege == null && SelectedDegree != null){
+				document.getElementById("Results").innerHTML = '<span style = "color: red;">Please select a college.</span>';
+				}
+				if (SelectedDegree == null && SelectedCollege != null){
+				document.getElementById("Results").innerHTML = '<span style = "color: red;">Please select a degree.</span>';
+				}
+				if (SelectedDegree == null && SelectedCollege == null){
+				document.getElementById("Results").innerHTML = '<span style = "color: red;">Please select a college and degree.</span>';
+				}
+			}
+
 		  		});
 		</script>
 
