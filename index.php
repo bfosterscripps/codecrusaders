@@ -132,7 +132,7 @@
 			        var xmlhttp = new XMLHttpRequest();
 				xmlhttp.open("GET", 'Results.php?degree=' + SelectedDegree + '&college=' + SelectedCollege, false);
 				xmlhttp.send();
-				document.getElementById("Results").innerHTML = xmlhttp.responseText;
+				document.getElementById("Results").innerHTML = ("$" + xmlhttp.responseText);
 			}else{
 				if (SelectedCollege == null && SelectedDegree != null){
 				document.getElementById("Results").innerHTML = '<span style = "color: red;">Please select a college.</span>';
