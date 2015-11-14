@@ -1,4 +1,4 @@
-<html><head>
+﻿<html><head>
 		<title>Degree Calculator</title>
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
 		<link href="lib/css/navbar-fixed-top.css" rel="stylesheet">
@@ -132,16 +132,13 @@
 			        var xmlhttp = new XMLHttpRequest();
 				xmlhttp.open("GET", 'Results.php?degree=' + SelectedDegree + '&college=' + SelectedCollege, false);
 				xmlhttp.send();
-<<<<<<< HEAD
+
 				if(xmlhttp.responseText == "0 Results"){
 				document.getElementById("Results").innerHTML = (xmlhttp.responseText);
 				}else{
 				    document.getElementById("Results").innerHTML = ("$" + xmlhttp.responseText)
 				    }
-=======
-				document.getElementById("Results").innerHTML = ("$" + xmlhttp.responseText);
->>>>>>> ead269d3bcaf8a7d37bddb037edcae634a1056c0
-			}else{
+				}else{
 				if (SelectedCollege == null && SelectedDegree != null){
 				document.getElementById("Results").innerHTML = '<span style = "color: red;">Please select a college.</span>';
 				}
